@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28010.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCCapstone6Tasklist", "GCCapstone6Tasklist\GCCapstone6Tasklist.csproj", "{03D2F340-14F0-4899-AFEB-3B0C317B95AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCCapstone6Tasklist.Data", "GCCapstone6Tasklist.Data\GCCapstone6Tasklist.Data.csproj", "{679A5D67-FD9B-4292-8F02-8CE890CF5B2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCCapstone6Tasklist.Domain", "GCCapstone6Tasklist.Domain\GCCapstone6Tasklist.Domain.csproj", "{17841C99-B2C4-40BF-AC46-E5EC8418AC25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{03D2F340-14F0-4899-AFEB-3B0C317B95AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03D2F340-14F0-4899-AFEB-3B0C317B95AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03D2F340-14F0-4899-AFEB-3B0C317B95AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{679A5D67-FD9B-4292-8F02-8CE890CF5B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{679A5D67-FD9B-4292-8F02-8CE890CF5B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{679A5D67-FD9B-4292-8F02-8CE890CF5B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{679A5D67-FD9B-4292-8F02-8CE890CF5B2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17841C99-B2C4-40BF-AC46-E5EC8418AC25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17841C99-B2C4-40BF-AC46-E5EC8418AC25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17841C99-B2C4-40BF-AC46-E5EC8418AC25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17841C99-B2C4-40BF-AC46-E5EC8418AC25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
