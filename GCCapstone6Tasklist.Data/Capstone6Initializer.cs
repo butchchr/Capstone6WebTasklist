@@ -15,17 +15,15 @@ namespace GCCapstone6Tasklist.Data
             var product = new TaskToDo()
             {   
                 AssignedTeamMember = "Jill Palms",
-                Description = "Meeting with the Bobs"
+                Description = "Meeting with the Bobs",
+                DueDate = new DateTime(1990, 4, 20),
+                IsDone = false
             };
             context.TaskToDos.Add(product);
 
             var customer = new TeamMember()
             {
-                FirstName = "Jill",
-                LastName = "Palms",
-                DateOfBirth = new DateTime(1990, 4, 20),
-                FavoriteCoffee = "Black",
-                Email = "JillPalms@Michigan.org",
+                Name = "Jill Palms",
                 Password = "BillyTheSquid"
             };
             context.TeamMembers.Add(customer);
