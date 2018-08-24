@@ -9,16 +9,19 @@ using GCCapstone6Tasklist.Domain.Models;
 
 namespace GCCapstone6Tasklist.Data.Maps
 {
-    class TeamMemberMap :EntityTypeConfiguration<TeamMember>
+    public class TeamMemberMap : EntityTypeConfiguration<TeamMember>
     {
         public TeamMemberMap()
         {
             HasKey(x => x.Id);
-            Property(x => x.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(x => x.Id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.Name)
-                    .HasMaxLength(50)
-                    .IsRequired();
-
+                .HasMaxLength(50)
+                .IsRequired();
+            Property(x => x.Password)
+                .HasMaxLength(50)
+                .IsRequired();
         }
     }
 }

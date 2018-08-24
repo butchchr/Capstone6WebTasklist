@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GCCapstone6Tasklist.Domain.Models
 {
-    public class Task
+    public class TaskToDo
     {
         public int Id { get; set; }
 
