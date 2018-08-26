@@ -1,0 +1,20 @@
+﻿@model GCCapstone6Tasklist.Models.Authentication.Authenticate
+
+@{
+    ViewBag.Title = "Index";
+}
+<br/>
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true) //if not displaying errors delete this
+    
+    //make login form here
+
+
+    //Same thing for rego page (post to register)
+
+
+}   

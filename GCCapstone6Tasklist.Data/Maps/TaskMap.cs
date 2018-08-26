@@ -16,8 +16,7 @@ namespace GCCapstone6Tasklist.Data.Maps
             HasKey(x => x.Id);
             Property(x => x.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(x => x.AssignedTeamMember)
-                .HasMaxLength(50)
+            Property(x => x.TeamMemberId)
                 .IsRequired();
             Property(x => x.Description)
                 .HasMaxLength(254)

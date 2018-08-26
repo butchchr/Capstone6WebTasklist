@@ -13,16 +13,16 @@ namespace GCCapstone6Tasklist.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Task()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Our team's tasks";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult AddTasks()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "New tasks for our team";
 
             return View();
         }

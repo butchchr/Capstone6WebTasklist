@@ -12,21 +12,23 @@ namespace GCCapstone6Tasklist.Data
     {
         protected override void Seed(Capstone6Context context)
         {
-            var product = new TaskToDo()
-            {   
-                AssignedTeamMember = "Jill Palms",
+            var teamMember = new TeamMember()
+            {
+                Name = "Jill Palms",
+                Email = "JillPalms@michigan.org",
+                Password = "BillyTheSquid"
+            };
+            context.TeamMembers.Add(teamMember);
+
+            var taskToDo = new TaskToDo()
+            {
+                AssignedTeamMember = teamMember,
                 Description = "Meeting with the Bobs",
                 DueDate = new DateTime(1990, 4, 20),
                 IsDone = false
             };
-            context.TaskToDos.Add(product);
+            context.TaskToDos.Add(taskToDo);
 
-            var customer = new TeamMember()
-            {
-                Name = "Jill Palms",
-                Password = "BillyTheSquid"
-            };
-            context.TeamMembers.Add(customer);
             context.SaveChanges();
 
             base.Seed(context);

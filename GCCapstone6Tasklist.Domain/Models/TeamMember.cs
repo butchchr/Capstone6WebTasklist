@@ -12,6 +12,10 @@ namespace GCCapstone6Tasklist.Domain.Models
 
         public string Name { get; set; }
 
+        public string Email { get; set; }
+
         public string Password { get; set; }
+
+        public IEnumerable<TaskToDo> TaskToDos { get; set; }
     }
 }
