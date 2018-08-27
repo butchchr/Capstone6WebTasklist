@@ -1,18 +1,18 @@
-﻿@model IEnumerable<GCCapstone6Tasklist.Domain.Models.TaskToDo>
+﻿@model IEnumerable<GCCapstone6Tasklist.Models.Tasks.TaskModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Team Member Tasks";
 }
 <br />
-<h2>Index</h2>
+<h2>Add Team Tasks</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Task", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.AssignedTeamMember.Name)
+            @Html.DisplayNameFor(model => model.TeamMemberId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
@@ -29,7 +29,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.AssignedTeamMember.Name)
+            @Html.DisplayFor(modelItem => item.TeamMemberId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Description)
@@ -41,8 +41,7 @@
             @Html.DisplayFor(modelItem => item.IsDone)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Modify Task", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>

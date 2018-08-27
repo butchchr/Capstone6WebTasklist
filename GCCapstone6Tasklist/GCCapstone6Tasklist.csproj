@@ -249,18 +249,13 @@
     <Content Include="Views\Authentication\Index.cshtml" />
     <Content Include="Views\Task\Create.cshtml" />
     <Content Include="Views\Task\Delete.cshtml" />
-    <Content Include="Views\Task\Details.cshtml" />
     <Content Include="Views\Task\Edit.cshtml" />
     <Content Include="Views\Task\Index.cshtml" />
-    <Content Include="Views\TeamMember\Create.cshtml" />
-    <Content Include="Views\TeamMember\Delete.cshtml" />
-    <Content Include="Views\TeamMember\Details.cshtml" />
-    <Content Include="Views\TeamMember\Edit.cshtml" />
-    <Content Include="Views\TeamMember\Index.cshtml" />
     <Content Include="Views\Authentication\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\TaskModels\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

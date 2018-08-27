@@ -15,7 +15,7 @@ namespace GCCapstone6Tasklist.Data
             var teamMember = new TeamMember()
             {
                 Name = "Jill Palms",
-                Email = "JillPalms@michigan.org",
+                Email = "JillPalms@michigan.gov",
                 Password = "BillyTheSquid"
             };
             context.TeamMembers.Add(teamMember);

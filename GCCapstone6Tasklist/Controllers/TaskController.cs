@@ -1,5 +1,6 @@
 ﻿using GCCapstone6Tasklist.Data;
 using GCCapstone6Tasklist.Domain.Models;
+using GCCapstone6Tasklist.Models.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -10,7 +11,7 @@ using System.Web.Mvc;
 
 namespace GCCapstone6Tasklist.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class TaskController : Controller
     {
         private Capstone6Context db = new Capstone6Context();
@@ -18,8 +19,19 @@ namespace GCCapstone6Tasklist.Controllers
         // GET: Task
         public ActionResult Index()
         {
-            var Task = db.TaskToDos.Include(t => t.AssignedTeamMember);
-            return View(Task.ToList());
+            var taskToDos = db.TaskToDos.Include(t => t.AssignedTeamMember);
+            var tasks = new List<TaskModel>();
+            foreach(var toDo in taskToDos)
+            {
+                tasks.Add(new TaskModel
+                {
+                    Id = toDo.Id,
+                    Description = toDo.Description,
+                    DueDate = toDo.DueDate,
+                    IsDone = toDo.IsDone
+                });
+            }
+            return View(tasks.ToList());
         }
 
         // GET: Task/Details/5

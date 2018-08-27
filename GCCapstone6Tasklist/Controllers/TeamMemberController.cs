@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -11,7 +11,7 @@ using GCCapstone6Tasklist.Domain.Models;
 
 namespace GCCapstone6Tasklist.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class TeamMemberController : Controller
     {
         private Capstone6Context db = new Capstone6Context();
