@@ -11,6 +11,7 @@ using GCCapstone6Tasklist.Domain.Models;
 
 namespace GCCapstone6Tasklist.Controllers
 {
+    [Authorize]
     public class TeamMemberController : Controller
     {
         private Capstone6Context db = new Capstone6Context();

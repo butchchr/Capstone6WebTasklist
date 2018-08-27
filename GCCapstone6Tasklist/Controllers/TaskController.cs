@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace GCCapstone6Tasklist.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class TaskController : Controller
     {
         private Capstone6Context db = new Capstone6Context();

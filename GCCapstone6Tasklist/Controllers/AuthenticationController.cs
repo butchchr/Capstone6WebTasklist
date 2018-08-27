@@ -32,7 +32,7 @@ namespace GCCapstone6Tasklist.Controllers
                         .ToList();
                     if (userList.Count() == 1)
                     {
-                        //FormsAuthentication.SetAuthCookie(model.Email, false);
+                        FormsAuthentication.SetAuthCookie(model.Email, false);
                         return RedirectToAction("Index", "Task");
                     }
                     else
@@ -58,6 +58,8 @@ namespace GCCapstone6Tasklist.Controllers
             if (ModelState.IsValid)
             {
                 //logic to create account
+                //make sure there is not already a user with that email
+                FormsAuthentication.SetAuthCookie(model.Email, false);
                 return RedirectToAction("Index", "Task");
             }
             return View(model);
@@ -67,7 +69,7 @@ namespace GCCapstone6Tasklist.Controllers
         [AllowAnonymous]
         public ActionResult Logout()
         {
-            //FormsAuthentication.SignOut();
+            FormsAuthentication.SignOut();
             return View();
         }
     }
