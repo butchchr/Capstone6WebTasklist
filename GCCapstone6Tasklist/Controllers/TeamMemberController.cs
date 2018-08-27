@@ -1,122 +1,117 @@
-﻿using GCCapstone6Tasklist.Data;
-using GCCapstone6Tasklist.Domain.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using GCCapstone6Tasklist.Data;
+using GCCapstone6Tasklist.Domain.Models;
 
 namespace GCCapstone6Tasklist.Controllers
 {
-    //[Authorize]
-    public class TaskController : Controller
+    public class TeamMemberController : Controller
     {
         private Capstone6Context db = new Capstone6Context();
 
-        // GET: Task
+        // GET: TeamMembers
         public ActionResult Index()
         {
-            var Task = db.TaskToDos.Include(t => t.AssignedTeamMember);
-            return View(Task.ToList());
+            return View(db.TeamMembers.ToList());
         }
 
-        // GET: Task/Details/5
+        // GET: TeamMembers/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TaskToDo taskToDo = db.TaskToDos.Find(id);
-            if (taskToDo == null)
+            TeamMember teamMember = db.TeamMembers.Find(id);
+            if (teamMember == null)
             {
                 return HttpNotFound();
             }
-            return View(taskToDo);
+            return View(teamMember);
         }
 
-        // GET: Task/Create
+        // GET: TeamMembers/Create
         public ActionResult Create()
         {
-            ViewBag.TeamMemberId = new SelectList(db.TeamMembers, "Id", "Name");
             return View();
         }
 
-        // POST: Task/Create
+        // POST: TeamMembers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,TeamMemberId,Description,DueDate,IsDone")] TaskToDo taskToDo)
+        public ActionResult Create([Bind(Include = "Id,Name,Email,Password")] TeamMember teamMember)
         {
             if (ModelState.IsValid)
             {
-                db.TaskToDos.Add(taskToDo);
+                db.TeamMembers.Add(teamMember);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.TeamMemberId = new SelectList(db.TeamMembers, "Id", "Name", taskToDo.TeamMemberId);
-            return View(taskToDo);
+            return View(teamMember);
         }
 
-        // GET: Task/Edit/5
+        // GET: TeamMembers/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TaskToDo taskToDo = db.TaskToDos.Find(id);
-            if (taskToDo == null)
+            TeamMember teamMember = db.TeamMembers.Find(id);
+            if (teamMember == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.TeamMemberId = new SelectList(db.TeamMembers, "Id", "Name", taskToDo.TeamMemberId);
-            return View(taskToDo);
+            return View(teamMember);
         }
 
-        // POST: Task/Edit/5
+        // POST: TeamMembers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,TeamMemberId,Description,DueDate,IsDone")] TaskToDo taskToDo)
+        public ActionResult Edit([Bind(Include = "Id,Name,Email,Password")] TeamMember teamMember)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(taskToDo).State = EntityState.Modified;
+                db.Entry(teamMember).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.TeamMemberId = new SelectList(db.TeamMembers, "Id", "Name", taskToDo.TeamMemberId);
-            return View(taskToDo);
+            return View(teamMember);
         }
 
-        // GET: Task/Delete/5
+        // GET: TeamMembers/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TaskToDo taskToDo = db.TaskToDos.Find(id);
-            if (taskToDo == null)
+            TeamMember teamMember = db.TeamMembers.Find(id);
+            if (teamMember == null)
             {
                 return HttpNotFound();
             }
-            return View(taskToDo);
+            return View(teamMember);
         }
 
-        // POST: Task/Delete/5
+        // POST: TeamMembers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TaskToDo taskToDo = db.TaskToDos.Find(id);
-            db.TaskToDos.Remove(taskToDo);
+            TeamMember teamMember = db.TeamMembers.Find(id);
+            db.TeamMembers.Remove(teamMember);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

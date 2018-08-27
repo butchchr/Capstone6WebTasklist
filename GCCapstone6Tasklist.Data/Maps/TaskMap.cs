@@ -16,8 +16,6 @@ namespace GCCapstone6Tasklist.Data.Maps
             HasKey(x => x.Id);
             Property(x => x.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(x => x.TeamMemberId)
-                .IsRequired();
             Property(x => x.Description)
                 .HasMaxLength(254)
                 .IsRequired();
@@ -25,6 +23,9 @@ namespace GCCapstone6Tasklist.Data.Maps
                 .IsRequired();
             Property(x => x.IsDone)
                 .IsRequired();
+            HasRequired(x => x.AssignedTeamMember)
+                .WithMany(tm => tm.TaskToDos)
+                .HasForeignKey(tm => tm.TeamMemberId);
         }
     }
 }

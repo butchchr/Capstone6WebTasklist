@@ -12,19 +12,5 @@ namespace GCCapstone6Tasklist.Controllers
         {
             return View();
         }
-
-        public ActionResult Task()
-        {
-            ViewBag.Message = "Our team's tasks";
-
-            return View();
-        }
-
-        public ActionResult AddTasks()
-        {
-            ViewBag.Message = "New tasks for our team";
-
-            return View();
-        }
     }
 }

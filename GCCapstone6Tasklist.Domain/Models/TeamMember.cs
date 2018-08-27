@@ -16,6 +16,6 @@ namespace GCCapstone6Tasklist.Domain.Models
 
         public string Password { get; set; }
 
-        public IEnumerable<TaskToDo> TaskToDos { get; set; }
+        public ICollection<TaskToDo> TaskToDos { get; set; }
     }
 }

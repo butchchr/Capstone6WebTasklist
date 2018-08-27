@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using GCCapstone6Tasklist.Data.Maps;
 using GCCapstone6Tasklist.Domain.Models;
 
+
 namespace GCCapstone6Tasklist.Data
 {
     public class Capstone6Context : DbContext

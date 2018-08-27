@@ -19,6 +19,9 @@ namespace GCCapstone6Tasklist.Data.Maps
             Property(x => x.Name)
                 .HasMaxLength(50)
                 .IsRequired();
+            Property(x => x.Email)
+                .HasMaxLength(254)
+                .IsRequired();
             Property(x => x.Password)
                 .HasMaxLength(50)
                 .IsRequired();

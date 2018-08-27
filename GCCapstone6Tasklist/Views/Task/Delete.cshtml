@@ -1,0 +1,56 @@
+﻿@model GCCapstone6Tasklist.Domain.Models.TaskToDo
+
+@{
+    ViewBag.Title = "Delete";
+}
+<br />
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TaskToDo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignedTeamMember.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignedTeamMember.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDone)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

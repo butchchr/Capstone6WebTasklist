@@ -29,7 +29,5 @@ namespace GCCapstone6Tasklist.Models
         [DataType(DataType.Password)]
         [Compare(nameof(Password), ErrorMessage = "Passwords do not match")]
         public string ConfirmPassword { get; set; }
-
-        //public IEnumerable<TaskToDo> TaskToDos { get; set; }
     }
 }
